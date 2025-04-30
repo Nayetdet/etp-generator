@@ -8,6 +8,7 @@ class AppFacade:
         self.app = Flask(__name__)
     
     def configure_app(self):
+        self.app.config['DATABASE_URI'] = Config.DATABASE_URI
         self.app.config['OPENAPI_KEY'] = Config.OPENAI_KEY
 
     def register_blueprints(self):
